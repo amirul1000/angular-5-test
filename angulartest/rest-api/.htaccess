@@ -1,0 +1,33 @@
+
+
+#RewriteEngine on
+
+
+
+#RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
+
+
+
+#RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+
+#RewriteRule .* - [L,R=404]
+
+
+
+
+
+#RewriteEngine on
+
+
+
+#RewriteCond %{THE_REQUEST} \ /server\.php\?college=([^\s&]+) [NC]
+
+#RewriteRule ^ /server/%1? [R=301,L]
+
+
+
+#RewriteCond %{REQUEST_FILENAME} !-d # not a dir
+
+#RewriteCond %{REQUEST_FILENAME} !-f # not a file
+
+#RewriteRule server/(.*)$ /server.php?college=$1 [NC,L]
